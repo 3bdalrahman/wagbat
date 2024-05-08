@@ -43,15 +43,9 @@ class SignUp : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this,"User has been Created",Toast.LENGTH_LONG).show()
-
-                        signup_button.setOnClickListener {
                             var login_page= Intent(this,Login::class.java)
                             startActivity(login_page)
                             finish()
-                        }
-
-
-
                     } else {
                         // If sign in fails, display a message to the user.
 
