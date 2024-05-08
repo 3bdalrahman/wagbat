@@ -13,11 +13,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        var move=findViewById<Button>(R.id.move)
+
+        val move=findViewById<Button>(R.id.move)
 
         move.setOnClickListener {
 
-            var nextpage= Intent(this,SignUp::class.java)
+            val nextpage= Intent(this,SignUp::class.java)
             startActivity(nextpage)
             finish()
         }

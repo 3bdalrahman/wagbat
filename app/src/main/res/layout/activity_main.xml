@@ -13,6 +13,6 @@
         android:layout_height="wrap_content"
         android:text="signup"
         android:layout_gravity="center"
-        android:layout_marginLeft="150dp"></Button>
+        android:layout_marginLeft="150dp"/>
 
 </LinearLayout>
