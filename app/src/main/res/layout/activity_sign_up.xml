@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ellipse2">
+
+    </ImageView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ellipse1">
+
+    </ImageView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ellipse3"
+        android:layout_alignParentRight="true">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/SUTxT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="98dp"
+        android:text="Sign Up"
+        android:textSize="37sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SUTxT"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="31dp"
+        android:text="Full name">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/Fullname"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SUTxT"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/singup_rec"
+        android:hint="Your Name"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="17sp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Fullname"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="31dp"
+        android:text="E-mail">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Fullname"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/singup_rec"
+        android:hint="Enter Your E-mail"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="17sp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Email"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="31dp"
+        android:text="Password">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Email"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/singup_rec"
+        android:hint="Enter Passowrd"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="17sp">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/SINGUPBTN"
+        android:layout_width="248dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/Password"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#FE724C"
+        android:text="SIGN UP"
+        android:textSize="15sp"
+        app:cornerRadius="300px">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/LTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? Login"
+        android:layout_below="@id/SINGUPBTN"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:textColor="#FE724C">
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="100dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line2"
+            android:paddingEnd="23dp"
+            android:layout_marginTop="10dp">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/singTxT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" sign in with"
+            android:clickable="true">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line2"
+            android:paddingStart="23dp"
+            android:layout_marginTop="10dp">
+
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/GFLinearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="28dp">
+
+        <Button
+            android:id="@+id/FacebookBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/fcebooklogo"
+            android:text="FACEBOOK"
+            android:textColor="@color/black"
+            app:cornerRadius="200px">
+
+        </Button>
+
+        <Button
+            android:id="@+id/GoogleBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/googlelogo"
+            android:text="GOOGLE"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/black"
+            app:cornerRadius="200px">
+
+        </Button>
+
+    </LinearLayout>
+
+</RelativeLayout>

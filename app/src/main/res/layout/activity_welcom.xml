@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/shadow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/welcome">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/Bground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/shadow">
+
+    </ImageView>
+
+    <LinearLayout
+        android:id="@+id/WelcomeTxT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="181dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/TxT1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to"
+            android:textColor="#111719"
+            android:textSize="100px"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/TxT2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FoodHub"
+            android:textColor="#FE724C"
+            android:textSize="100px"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/TxT3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your favourite foods delivered"
+            android:textColor="#30384F"
+            android:textSize="45px">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/TxT4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fast at your door."
+            android:textColor="#30384F"
+            android:textSize="45px">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/WelcomeSingLin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="54dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/WelcomeSingTxT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingEnd="23dp"
+                android:src="@drawable/line">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/singTxT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" sign in with"
+                android:textColor="#FFFFFF">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="23dp"
+                android:src="@drawable/line">
+
+            </ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/WelcomeSing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/FacebookBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:drawableLeft="@drawable/fcebooklogo"
+                android:text="FACEBOOK"
+                android:textColor="@color/black"
+                app:cornerRadius="200px">
+
+            </Button>
+
+            <Button
+                android:id="@+id/GoogleBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:backgroundTint="@color/white"
+                android:drawableLeft="@drawable/googlelogo"
+                android:text="GOOGLE"
+                android:textColor="@color/black"
+                app:cornerRadius="200px">
+
+            </Button>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/SingBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.3"
+            android:backgroundTint="@color/white"
+            app:cornerRadius="200px">
+
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="28dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/TexT1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start with email or phone"
+            android:textColor="@color/white"
+            android:textSize="16dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/SinginTexT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:text="Already have an account ?  Sing in"
+            android:textColor="@color/white">
+
+        </TextView>
+
+    </LinearLayout>
+
+</RelativeLayout>
