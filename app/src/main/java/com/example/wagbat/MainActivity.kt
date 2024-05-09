@@ -2,26 +2,33 @@ package com.example.wagbat
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.os.Handler
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var logo: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val move=findViewById<Button>(R.id.move)
+        logo = findViewById(R.id.imageView)
 
-        move.setOnClickListener {
+        logo.alpha = 0f
+        Handler().postDelayed({
 
-            val nextpage= Intent(this,SignUp::class.java)
-            startActivity(nextpage)
-            finish()
-        }
-        }
+            logo.animate().setDuration(1500).alpha(1f).withEndAction{
+
+                var intent = Intent(this, SignUp::class.java)
+                startActivity(intent)
+                finish()
+            }
+        },1000)
+
+
+    }
 
 }

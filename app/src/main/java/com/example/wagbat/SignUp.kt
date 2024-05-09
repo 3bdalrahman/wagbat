@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -22,6 +23,7 @@ class SignUp : AppCompatActivity() {
     private lateinit var password :EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseApp.initializeApp(this)
         setContentView(R.layout.activity_sign_up)
         enableEdgeToEdge()
 
@@ -43,9 +45,9 @@ class SignUp : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this,"User has been Created",Toast.LENGTH_LONG).show()
-                            var login_page= Intent(this,Login::class.java)
-                            startActivity(login_page)
-                            finish()
+                        var login_page= Intent(this,Login::class.java)
+                        startActivity(login_page)
+                        finish()
                     } else {
                         // If sign in fails, display a message to the user.
 
