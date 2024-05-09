@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FE724C"
+    tools:context=".EndOfApp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logo">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thank You "
+        android:layout_centerInParent="true"
+        android:textSize="31dp"
+        android:textColor="@color/white"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/ExitBtn"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/white"
+        android:text="Exit"
+        android:textColor="@color/black"
+        app:cornerRadius="100px">
+
+    </Button>
+
+    <Button
+        android:id="@+id/BackToHomeBtn2"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="100dp"
+        android:layout_toEndOf="@+id/ExitBtn"
+        android:backgroundTint="@color/white"
+        android:text="Back To Home"
+        android:textColor="@color/black"
+        app:cornerRadius="100px">
+
+    </Button>
+
+</RelativeLayout>
