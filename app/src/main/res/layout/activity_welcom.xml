@@ -47,7 +47,7 @@
             android:id="@+id/TxT2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FoodHub"
+            android:text="Wagbat"
             android:textColor="#FE724C"
             android:textSize="100px"
             android:textStyle="bold">
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="54dp"
+        android:layout_marginBottom="100dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -171,7 +171,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="74dp"
         android:orientation="vertical">
 
         <TextView
