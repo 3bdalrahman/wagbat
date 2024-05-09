@@ -19,16 +19,16 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         img_id = arrayOf(
-            R.drawable.catagory1,
-            R.drawable.catagory2,
-            R.drawable.catagory3,
-            R.drawable.catagory4,
-            R.drawable.catagory5
+            R.drawable.features,
+            R.drawable.features,
+            R.drawable.features,
+            R.drawable.features,
+            R.drawable.features
         )
         names = arrayOf("Burger King","Dunkin Dounts","Piza King","Sandwichs","Roma")
 
         recycler = findViewById(R.id.catagory)
-        recycler.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        recycler.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         recycler.setHasFixedSize(true)
         product_list= ArrayList<item>()
         getData()}

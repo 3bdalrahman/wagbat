@@ -121,57 +121,9 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/catagory"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="10dp"
-                android:text="Featured restaurants"
-                android:textStyle="bold">
 
-            </TextView>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/featured"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/catagory"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="30dp">
-
-            </androidx.recyclerview.widget.RecyclerView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/featured"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="10dp"
-                android:text="Popular items"
-                android:textStyle="bold">
-
-            </TextView>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/Popularitems"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/featured"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp">
-
-            </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
     </ScrollView>
-
-    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-    <!--        android:id="@+id/Navigation_Bar"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_alignParentBottom="true"-->
-    <!--        app:menu="@menu/menu">-->
-    <!--    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
 
 </RelativeLayout>
