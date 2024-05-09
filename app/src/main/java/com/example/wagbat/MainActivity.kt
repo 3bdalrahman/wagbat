@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
             logo.animate().setDuration(1500).alpha(1f).withEndAction{
 
-                var intent = Intent(this, SignUp::class.java)
+                var intent = Intent(this, Welcom::class.java)
                 startActivity(intent)
                 finish()
             }
