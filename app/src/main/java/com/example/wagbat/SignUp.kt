@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,7 @@ class SignUp : AppCompatActivity() {
     private lateinit var fullname :EditText
     private lateinit var email :EditText
     private lateinit var password :EditText
+    private lateinit var login_txt :TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         FirebaseApp.initializeApp(this)
@@ -32,6 +34,8 @@ class SignUp : AppCompatActivity() {
         fullname = findViewById(R.id.Fullname)
         email = findViewById(R.id.Email)
         password = findViewById(R.id.Password)
+        login_txt = findViewById(R.id.LTXT)
+
         signup_button.setOnClickListener {
             var fullname_txt = fullname.text.toString()
             var email_txt = email.text.toString()
@@ -57,6 +61,10 @@ class SignUp : AppCompatActivity() {
                     }
                 }
 
+        }
+        login_txt.setOnClickListener {
+            var nextpage = Intent (this,Login::class.java)
+            startActivity(nextpage)
         }
     }
 }
