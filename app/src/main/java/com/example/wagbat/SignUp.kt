@@ -35,7 +35,10 @@ class SignUp : AppCompatActivity() {
         email = findViewById(R.id.Email)
         password = findViewById(R.id.Password)
         login_txt = findViewById(R.id.LTXT)
-
+        login_txt.setOnClickListener {
+            var nextpage = Intent (this,Login::class.java)
+            startActivity(nextpage)
+        }
         signup_button.setOnClickListener {
             var fullname_txt = fullname.text.toString()
             var email_txt = email.text.toString()
@@ -61,10 +64,6 @@ class SignUp : AppCompatActivity() {
                     }
                 }
 
-        }
-        login_txt.setOnClickListener {
-            var nextpage = Intent (this,Login::class.java)
-            startActivity(nextpage)
         }
     }
 }

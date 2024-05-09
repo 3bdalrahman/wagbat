@@ -11,7 +11,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class Welcom : AppCompatActivity() {
-
     lateinit var facebookBtn: Button
     lateinit var googleBtn: Button
     lateinit var signInTxt: TextView
@@ -20,8 +19,6 @@ class Welcom : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_welcom)
-
-
         val home = Intent(this, Home::class.java)
         val signup = Intent(this, SignUp::class.java)
         val loginIntent = Intent(this, Login::class.java)
