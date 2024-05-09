@@ -22,8 +22,8 @@ class Welcom : AppCompatActivity() {
         setContentView(R.layout.activity_welcom)
 
 
-        val onBoarding1Intent = Intent(this, Home::class.java)
-        val onBoarding1FgIntent = Intent(this, Home::class.java)
+        val home = Intent(this, Home::class.java)
+        val signup = Intent(this, SignUp::class.java)
         val loginIntent = Intent(this, Login::class.java)
 
         facebookBtn = findViewById(R.id.FacebookBtn)
@@ -33,12 +33,12 @@ class Welcom : AppCompatActivity() {
 
         facebookBtn.setOnClickListener {
             Toast.makeText(this, "Successfully Logged in", Toast.LENGTH_SHORT).show()
-            startActivity(onBoarding1FgIntent)
+            startActivity(home)
         }
 
         googleBtn.setOnClickListener {
             Toast.makeText(this, "Successfully Logged in", Toast.LENGTH_SHORT).show()
-            startActivity(onBoarding1FgIntent)
+            startActivity(home)
         }
 
         signInTxt.setOnClickListener {
@@ -46,7 +46,7 @@ class Welcom : AppCompatActivity() {
         }
 
         signUpBtn.setOnClickListener {
-            startActivity(onBoarding1Intent)
+            startActivity(signup)
         }
         }
     }
