@@ -68,11 +68,6 @@ class Home : AppCompatActivity() {
         })
 
 
-
-
-
-
-
     }
 
     private fun filterlist(query: String?) {
