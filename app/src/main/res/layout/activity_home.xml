@@ -60,22 +60,17 @@
 
         </TextView>
 
-        <EditText
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/searchbar"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="51dp"
-            android:layout_below="@+id/txtlinear2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="17dp"
+            app:queryHint="search her..."
+            app:iconifiedByDefault="false"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/singup_rec"
-            android:drawableLeft="@drawable/searchvector"
-            android:hint="  Find for food or restaurant..."
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="14dp">
+            android:layout_marginTop="10dp"/>
 
-        </EditText>
+
 
     </LinearLayout>
 
