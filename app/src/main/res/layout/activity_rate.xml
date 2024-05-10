@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FE724C"
+    tools:context=".Rate">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/rateTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="How was your last order \nGround Beef ?"
+        android:textColor="@color/white"
+        android:textSize="31dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rateTxt">
+
+    </RatingBar>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/ratingbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/singup_rec"
+        android:hint="  Write"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/white"
+        android:text="Submit"
+        android:textColor="@color/black"
+        app:cornerRadius="100px">
+
+    </Button>
+
+    <Button
+        android:id="@+id/BackToHomeBtn"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="50dp"
+        android:layout_toEndOf="@+id/submitBtn"
+        android:backgroundTint="@color/white"
+        android:text="Back To Home"
+        android:textColor="@color/black"
+        app:cornerRadius="100px">
+
+    </Button>
+
+</RelativeLayout>

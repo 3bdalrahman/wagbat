@@ -11,10 +11,16 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 
 class Login : AppCompatActivity() {
-    private lateinit var auth: FirebaseAuth
+    private lateinit var database: DatabaseReference
+    private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var signinBtn: Button
     private lateinit var email: EditText
     private lateinit var password: EditText
@@ -22,7 +28,8 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-        auth = Firebase.auth
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        database = firebaseDatabase.reference.child("users")
         signinBtn = findViewById(R.id.LOGNINBTN)
         email = findViewById(R.id.LoginEmail)
         password = findViewById(R.id.LoginPassword)
@@ -33,20 +40,27 @@ class Login : AppCompatActivity() {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            auth.signInWithEmailAndPassword(emailTxt, passwordTxt)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this, "Login Successfully", Toast.LENGTH_LONG).show()
-                        val user = auth.currentUser
-                        var intent = Intent(this, Home::class.java)
-                        intent.putExtra("user",user)
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(this, "Faild", Toast.LENGTH_LONG).show()
-
+            database.orderByChild("email").equalTo(emailTxt).addListenerForSingleValueEvent(object : ValueEventListener{
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.exists()){
+                        for(userSnapshot in dataSnapshot.children){
+                            val userData = userSnapshot.getValue(UserData::class.java)
+                            if (userData != null && userData.password == passwordTxt){
+                                Toast.makeText(this@Login,"Login Sucessful",Toast.LENGTH_SHORT).show()
+                                var intent = Intent(this@Login, Home::class.java)
+                                intent.putExtra("user",userData.email)
+                                startActivity(intent)
+                                finish()
+                            }
+                        }
                     }
+                    Toast.makeText(this@Login,"Login Failed",Toast.LENGTH_SHORT).show()
                 }
 
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@Login, "Database Error: ${error.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
 
     }

@@ -13,6 +13,7 @@ class Dishdetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_dishdetails)
+
         val details= intent.getParcelableExtra<dishs>("name")
         if(details!=null)
         {
@@ -24,5 +25,6 @@ class Dishdetails : AppCompatActivity() {
             price.text = details.price
             img.setImageResource(details.dish_img)
         }
+
     }
 }
