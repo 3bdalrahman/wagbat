@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/profilerounded"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eljad Eendaz"
+        android:layout_marginStart="50dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/white">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prelookstudio@gmail.com"
+        android:layout_marginStart="50dp"
+        android:textSize="15dp"
+        android:textColor="@color/white">
+
+    </TextView>
+
+</LinearLayout>

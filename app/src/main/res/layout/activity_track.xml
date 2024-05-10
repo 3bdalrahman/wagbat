@@ -43,50 +43,21 @@
 
     </ImageView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:backgroundTint="#FE724C"
-        android:layout_alignParentBottom="true">
-
-    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="380dp"
+        android:layout_height="500dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:backgroundTint="#FE724C"
-        app:cardCornerRadius="100px">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Distance"
-            android:textColor="@color/white"
-            android:alpha="0.8"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp">
-
-        </TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delivery place"
-            android:textColor="@color/white"
-            android:alpha="0.8"
-            android:layout_marginStart="215dp"
-            android:layout_marginTop="23dp">
-
-        </TextView>
-
+        app:cardCornerRadius="50dp"
+        app:cardBackgroundColor="#FE724C"
+        >
 
         <LinearLayout
             android:id="@+id/Distancelin"
             android:layout_width="366dp"
-            android:layout_height="109dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
 
             <TextView
                 android:id="@+id/Km"
@@ -134,19 +105,192 @@
 
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/confirm_map_button"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:text="Submit"
-        android:textColor="#FE724C"
-        android:textSize="16dp"
-        android:backgroundTint="@color/white"
-        app:cornerRadius="100px">
+        app:cardCornerRadius="50dp">
 
-    </Button>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cuttingline"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="68dp"
+            >
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fillbullet"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="46dp"
+            >
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bullet"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="103dp"
+            >
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bullet"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="160dp"
+            >
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bullet"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="217dp"
+            >
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="60dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order confirmed"
+                android:textSize="20dp"
+                >
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preparing Food"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"
+                >
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food on the way"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"
+                >
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivered to you"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"
+                >
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="end"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="40dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:30 PM"
+                android:textSize="16dp"
+                >
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:40 PM"
+                android:layout_marginTop="40dp"
+                android:textSize="16dp"
+                >
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:42 PM"
+                android:layout_marginTop="40dp"
+                android:textSize="16dp"
+                >
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="02:50 PM"
+                android:layout_marginTop="40dp"
+                android:textSize="16dp"
+                >
+
+            </TextView>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        app:cardBackgroundColor="@color/white"
+        android:layout_centerHorizontal="true"
+        >
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:backgroundTint="#FE724C"
+            android:textColor="@color/white"
+            >
+
+        </Button>
+
+    </androidx.cardview.widget.CardView>
+
 
 </RelativeLayout>

@@ -18,6 +18,12 @@
             android:name=".recy_dishes"
             android:exported="false" />
         <activity
+            android:name=".EndOfApp"
+            android:exported="false" />
+        <activity
+            android:name=".Rate"
+            android:exported="false" />
+        <activity
             android:name=".Track"
             android:exported="false" />
         <activity
