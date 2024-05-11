@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Wagbat"
         tools:targetApi="31">
         <activity
+            android:name=".Cart_Card"
+            android:exported="false" />
+        <activity
+            android:name=".Cart"
+            android:exported="false" />
+        <activity
             android:name=".recy_dishes"
             android:exported="false" />
         <activity

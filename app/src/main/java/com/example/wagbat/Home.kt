@@ -80,7 +80,7 @@ class Home : AppCompatActivity(){
 
 
 
-    private fun onNavigationItemSelected(item: MenuItem): Boolean {
+    fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.nav_profile -> {
                 supportFragmentManager.beginTransaction()
