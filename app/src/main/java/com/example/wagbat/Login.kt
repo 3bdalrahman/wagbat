@@ -48,7 +48,7 @@ class Login : AppCompatActivity() {
                             if (userData != null && userData.password == passwordTxt){
                                 Toast.makeText(this@Login,"Login Sucessful",Toast.LENGTH_SHORT).show()
                                 var intent = Intent(this@Login, Home::class.java)
-                                intent.putExtra("user",userData.email)
+                                intent.putExtra("Email",userData.email).putExtra("name",userData.fullName)
                                 startActivity(intent)
                                 finish()
                             }

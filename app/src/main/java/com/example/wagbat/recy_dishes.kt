@@ -23,10 +23,11 @@ class recy_dishes : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_recy_dishes)
 
+        name = findViewById(R.id.nam)
+
         val details= intent.getParcelableExtra<item>("name")
         if(details!=null)
         {
-            name = findViewById(R.id.nam)
             val img :ImageView = findViewById(R.id.img)
 
             name.text = details.resturant_nam
