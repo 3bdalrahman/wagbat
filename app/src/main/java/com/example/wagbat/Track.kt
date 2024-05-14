@@ -16,6 +16,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import android.content.Context
+import android.content.Intent
+import android.provider.ContactsContract.Data
+import android.widget.Toast
 
 class Track : AppCompatActivity() {
 
@@ -90,7 +93,12 @@ class Track : AppCompatActivity() {
                 // Handle errors
             }
         })
+
+        submitBtn.setOnClickListener{
+            saveCartToHistory()
+        }
     }
+
 
     private fun scheduleBulletUpdate(
         startTime: Long,
@@ -124,6 +132,42 @@ class Track : AppCompatActivity() {
             "Order Confirmed" -> orderConfirmFoodTimeBullet.setImageResource(R.drawable.fillbullet)
             // Add more cases for other statuses if needed
         }
+    }
+
+    private fun saveCartToHistory(){
+        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+        val currentUserCartRef: DatabaseReference = database.reference.child("users").child(currentUserId)
+        val cartRef = currentUserCartRef.child("cart")
+        cartRef.child("status").setValue("Order Confirmed")
+
+        cartRef.addListenerForSingleValueEvent(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val cartDetails = snapshot.value
+                saveToHistory(cartDetails)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+    }
+
+    private fun saveToHistory(cartDetails: Any?){
+        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+        val currentUserRef: DatabaseReference = database.reference.child("users").child(currentUserId)
+
+        val historyKey = currentUserRef.child("history").push().key?:""
+        val currentDateAndTime = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
+        currentUserRef.child("history").child(historyKey).child("date").setValue(currentDateAndTime)
+        currentUserRef.child("history").child(historyKey).child("details").setValue(cartDetails)
+        clearCartData(currentUserRef.child("cart"))
+    }
+    private fun clearCartData(currentUserCartRef: DatabaseReference){
+        currentUserCartRef.removeValue()
+        Toast.makeText(this@Track,"Order Confirmed",Toast.LENGTH_SHORT).show()
+        var intent = Intent(this, Home::class.java)
+        startActivity(intent)
+        finish()
     }
 
     fun getUserId(context: Context): String? {
