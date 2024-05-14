@@ -94,13 +94,11 @@ class Homee : Fragment() {
             R.drawable.mori,
             R.drawable.shawrma,
             R.drawable.koshary,
-            R.drawable.alkhdawy,
-            R.drawable.desoky,
-            R.drawable.abo_tarek
+            R.drawable.alkhdawy
         )
         val names = arrayOf(
             "MacDonald's", "Burger King", "Bufallo Burger", "Pizza Hut", "Roma Pizza",
-            "KFC", "Mori Sushi", "Shawrma El-reem", "El-tahrer", "Elkhedawy", "Desoky & Soda", "Abo-Tarek"
+            "KFC", "Mori Sushi", "Shawrma El-reem", "El-tahrer", "Elkhedawy"
         )
 
         for (i in img_id.indices) {

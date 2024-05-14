@@ -67,9 +67,10 @@
         </TextView>
 
         <TextView
+            android:id="@+id/subTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="52.99$"
+            android:text="0$"
             android:layout_marginStart="200dp"
             android:textStyle="bold">
         </TextView>
@@ -151,6 +152,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/finalTotalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="60.00$"
@@ -165,12 +167,14 @@
 </LinearLayout>
 
     <Button
+        android:id="@+id/confirmBtn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/checkout_txt"
         android:layout_marginTop="70dp"
         android:layout_centerHorizontal="true"
-        android:text="Submit"
+        android:text="Confirm"
+        android:textSize="16dp"
         android:backgroundTint="#FE724C">
 
     </Button>

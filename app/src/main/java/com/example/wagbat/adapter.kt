@@ -37,7 +37,7 @@ class adapter(private var itemlist: ArrayList<item>):
     }
 
     class MyViewHolder(item: View) : RecyclerView.ViewHolder(item) {
-      var img :ImageView = item.findViewById(R.id.resturant_logo)
+        var img :ImageView = item.findViewById(R.id.resturant_logo)
         var name :TextView = item.findViewById(R.id.resturant_name)
     }
 

@@ -123,9 +123,10 @@
         </ImageView>
 
         <ImageView
+            android:id="@+id/orderConfirmedFoodBullet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/fillbullet"
+            android:src="@drawable/bullet"
             android:layout_marginStart="35dp"
             android:layout_marginTop="46dp"
             >
@@ -133,6 +134,7 @@
         </ImageView>
 
         <ImageView
+            android:id="@+id/DeliverFoodButtlet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/bullet"
@@ -143,6 +145,7 @@
         </ImageView>
 
         <ImageView
+            android:id="@+id/PrepareFoodBullet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/bullet"
@@ -153,9 +156,10 @@
         </ImageView>
 
         <ImageView
+            android:id="@+id/orderFoodBullet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/bullet"
+            android:src="@drawable/fillbullet"
             android:layout_marginStart="35dp"
             android:layout_marginTop="217dp"
             >
@@ -183,28 +187,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Preparing Food"
-                android:layout_marginTop="30dp"
-                android:textSize="20dp"
-                >
-
-            </TextView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Food on the way"
-                android:layout_marginTop="30dp"
-                android:textSize="20dp"
-                >
-
-            </TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="Delivered to you"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"
+                >
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preparing the Food"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"
+                >
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ordering the Food"
                 android:layout_marginTop="30dp"
                 android:textSize="20dp"
                 >
@@ -224,16 +228,17 @@
             >
 
             <TextView
+                android:id="@+id/orderConfirmedFoodTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12:30 PM"
-                android:textSize="16dp"
-                >
+                android:textSize="16dp">
 
             </TextView>
 
 
             <TextView
+                android:id="@+id/DeliverFoodTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12:40 PM"
@@ -245,6 +250,7 @@
 
 
             <TextView
+                android:id="@+id/PrepareFoodTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12:42 PM"
@@ -255,6 +261,7 @@
             </TextView>
 
             <TextView
+                android:id="@+id/orderFoodTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="02:50 PM"
@@ -279,6 +286,7 @@
         >
 
         <Button
+            android:id="@+id/submitButton"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="Submit"

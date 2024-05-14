@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "280977179533",
+    "firebase_url": "https://wagbat-fcc7a-default-rtdb.firebaseio.com",
+    "project_id": "wagbat-fcc7a",
+    "storage_bucket": "wagbat-fcc7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280977179533:android:31c8b99f40e3da305733c4",
+        "android_client_info": {
+          "package_name": "com.example.wagbat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHl3nAcZ7xJTYizOhZR-KqaqI4_HgYQwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

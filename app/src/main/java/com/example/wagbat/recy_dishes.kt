@@ -9,15 +9,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 class recy_dishes : AppCompatActivity() {
+
     lateinit var recycler: RecyclerView
     lateinit var product_list: ArrayList<dishs>
     lateinit var img: Array<Int>
     lateinit var nam: Array<String>
-    lateinit var pric: Array<String>
+    lateinit var pric: Array<Int>
     lateinit var adapter : MyAdapter
     lateinit var name: TextView
+    lateinit var id: Array<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -45,8 +46,8 @@ class recy_dishes : AppCompatActivity() {
                 R.drawable.sand6,
             )
             nam = arrayOf("big tasty","original","combo1","combo2","combo3","combo4")
-
-            pric = arrayOf("150","100","300","350","250", "350")
+            id = arrayOf("d1","d2","d3","d4","d5","d6")
+            pric = arrayOf(150,100,300,350,250, 350)
         }else if(name.text.toString() == "Burger King"){
 
         img = arrayOf(
@@ -58,9 +59,9 @@ class recy_dishes : AppCompatActivity() {
             R.drawable.burg6)
 
             nam = arrayOf("big burger","original","combo1","combo2","chees burger","combo4")
-
-            pric = arrayOf("150","100","300","350","200", "300")
-        }else if(name.text.toString() == "Bufallo Burger" || name.text.toString() == "KFC"){
+            id = arrayOf("d7", "d8", "d9", "d10", "d11", "d12")
+            pric = arrayOf(150, 100, 300, 350, 200, 300)
+        }else if(name.text.toString() == "KFC"){
 
             img = arrayOf(
                 R.drawable.baf1,
@@ -71,9 +72,22 @@ class recy_dishes : AppCompatActivity() {
                 R.drawable.baf6)
 
             nam = arrayOf("big burger","halbino burger","cheese burger","combo2","combo1","combo3")
+            id = arrayOf("d31", "d32", "d33", "d34", "d35", "d36")
+            pric = arrayOf(200, 180, 300, 250, 200, 350)
+        }else if(name.text.toString() == "Bufallo Burger"){
 
-            pric = arrayOf("200","180","300","250","200", "350")
-        }else if(name.text.toString() == "Pizza Hut" || name.text.toString() == "Roma Pizza" ){
+            img = arrayOf(
+                R.drawable.baf1,
+                R.drawable.baf2,
+                R.drawable.baf3,
+                R.drawable.baf4,
+                R.drawable.baf5,
+                R.drawable.baf6)
+
+            nam = arrayOf("big burger","halbino burger","cheese burger","combo2","combo1","combo3")
+            id = arrayOf("d13", "d14", "d15", "d16", "d17", "d18")
+            pric = arrayOf(200, 180, 300, 250, 200, 350)
+        }else if(name.text.toString() == "Pizza Hut"){
 
             img = arrayOf(
                 R.drawable.pizza1,
@@ -84,8 +98,21 @@ class recy_dishes : AppCompatActivity() {
                 R.drawable.pizza1)
 
             nam = arrayOf("checkien pizza","chicken ranch","margrita","combo1","combo2","combo3")
+            id = arrayOf("d19", "d20", "d21", "d22", "d23", "d24")
+            pric = arrayOf(200, 180, 300, 150, 170, 160)
+        }else if(name.text.toString() == "Roma Pizza" ){
 
-            pric = arrayOf("200","180","300","150","170", "160")
+            img = arrayOf(
+                R.drawable.pizza1,
+                R.drawable.pizza2,
+                R.drawable.pizza3,
+                R.drawable.pizza4,
+                R.drawable.pizza6,
+                R.drawable.pizza1)
+
+            nam = arrayOf("checkien pizza","chicken ranch","margrita","combo1","combo2","combo3")
+            id = arrayOf("d25", "d26", "d27", "d28", "d29", "d30")
+            pric = arrayOf(200, 180, 300, 150, 170, 160)
         }else if(name.text.toString() == "Mori Sushi" ){
 
             img = arrayOf(
@@ -97,8 +124,8 @@ class recy_dishes : AppCompatActivity() {
                 R.drawable.su1)
 
             nam = arrayOf("combo1","combo2","combo3","combo4","combo5","combo6")
-
-            pric = arrayOf("1000","700","800","650","850", "1200")
+            id = arrayOf("d37", "d38", "d39", "d40", "d41", "d42")
+            pric = arrayOf(1000, 700, 800, 650, 850, 1200)
         }else if(name.text.toString() == "Shawrma El-reem" ){
 
             img = arrayOf(
@@ -110,9 +137,9 @@ class recy_dishes : AppCompatActivity() {
                 R.drawable.sha6)
 
             nam = arrayOf("chicken","meat ","meat with cola","chickn","combo1","combo2")
-
-            pric = arrayOf("60","80","100","50","150", "160")
-        }else if(name.text.toString() == "El-tahrer" || name.text.toString() == "Abo-Tarek" || name.text.toString() == "Elkhedawy"){
+            id = arrayOf("d43", "d44", "d45", "d46", "d47", "d48")
+            pric = arrayOf(60, 80, 100, 50, 150, 160)
+        }else if(name.text.toString() == "El-tahrer"){
 
             img = arrayOf(
                 R.drawable.kosh1,
@@ -123,8 +150,21 @@ class recy_dishes : AppCompatActivity() {
                 R.drawable.kosh6)
 
             nam = arrayOf("small","medium ","large","x large","small with cola","large with cola")
+            id = arrayOf("d49", "d50", "d51", "d52", "d53", "d54")
+            pric = arrayOf(25, 35, 50, 70, 60, 100)
+        }else if(name.text.toString() == "Elkhedawy"){
 
-            pric = arrayOf("25","35","50","70","60", "100")
+            img = arrayOf(
+                R.drawable.kosh1,
+                R.drawable.kosh2,
+                R.drawable.kosh3,
+                R.drawable.kosh4,
+                R.drawable.kosh5,
+                R.drawable.kosh6)
+
+            nam = arrayOf("small","medium ","large","x large","small with cola","large with cola")
+            id = arrayOf("d55", "d56", "d57", "d58", "d59", "d60")
+            pric = arrayOf(25, 35, 50, 70, 60, 100)
         }else{
 
             img = arrayOf(
@@ -136,8 +176,8 @@ class recy_dishes : AppCompatActivity() {
                 R.drawable.past1)
 
             nam = arrayOf("white sauce","red sauce ","pasta meat","pasta chicken","pasta with veg","Combo")
-
-            pric = arrayOf("100","80","150","130","110","180")
+            id = arrayOf("d43", "d44", "d45", "d46", "d47", "d48")
+            pric = arrayOf(100, 80, 150, 130, 110, 180)
         }
         recycler = findViewById(R.id.catagory2)
         recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
@@ -147,9 +187,7 @@ class recy_dishes : AppCompatActivity() {
 
         adapter = MyAdapter(product_list)
         recycler.adapter = adapter
-
         adapter.onItemClick = {
-
             val next_page= Intent(this,Dishdetails::class.java)
             next_page.putExtra("name",it)
             startActivity(next_page)
@@ -162,7 +200,7 @@ class recy_dishes : AppCompatActivity() {
     {
         for(i in img.indices)
         {
-            val product= dishs(img[i],nam[i],pric[i])
+            val product= dishs(img[i],nam[i],pric[i],id[i])
             product_list.add(product)
         }
         recycler.adapter= MyAdapter(product_list)

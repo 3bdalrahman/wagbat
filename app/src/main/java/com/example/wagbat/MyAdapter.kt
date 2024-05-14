@@ -55,13 +55,13 @@ class MyAdapter(private val itemList: ArrayList<dishs>) :
         fun bindLeft(item: dishs) {
             leftImg.setImageResource(item.dish_img)
             leftName.text = item.dish_name
-            leftPrice.text = item.price
+            leftPrice.text = item.price.toString()
         }
 
         fun bindRight(item: dishs) {
             rightImg.setImageResource(item.dish_img)
             rightName.text = item.dish_name
-            rightPrice.text = item.price
+            rightPrice.text = item.price.toString()
         }
     }
 }

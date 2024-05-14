@@ -1,5 +1,6 @@
 package com.example.wagbat
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -7,15 +8,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 
 class Login : AppCompatActivity() {
@@ -48,13 +43,15 @@ class Login : AppCompatActivity() {
                             if (userData != null && userData.password == passwordTxt){
                                 Toast.makeText(this@Login,"Login Sucessful",Toast.LENGTH_SHORT).show()
                                 var intent = Intent(this@Login, Home::class.java)
-                                intent.putExtra("Email",userData.email).putExtra("name",userData.fullName)
+                                intent.putExtra("Email",userData.email).putExtra("name",userData.fullName).putExtra("userid",userData.id)
+                                saveUserId(userData.id.toString())
                                 startActivity(intent)
                                 finish()
                             }
                         }
+                    }else{
+                        Toast.makeText(this@Login,"Login Failed",Toast.LENGTH_SHORT).show()
                     }
-                    Toast.makeText(this@Login,"Login Failed",Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -62,8 +59,12 @@ class Login : AppCompatActivity() {
                 }
             })
         }
-
     }
-
-
+    private fun saveUserId(userId: String) {
+        val sharedPref =
+            getSharedPreferences("com.example.wagbat.USER_ID_PREFS", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("userId", userId)
+        editor.apply()
+    }
 }

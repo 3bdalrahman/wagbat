@@ -8,10 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-data  class dishs(var dish_img:Int,var dish_name:String, var price:String) : Parcelable {
+data  class dishs(var dish_img:Int,var dish_name:String, var price:Int, var id:String) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
+        parcel.readInt(),
         parcel.readString()!!
     ) {
     }
@@ -19,7 +20,8 @@ data  class dishs(var dish_img:Int,var dish_name:String, var price:String) : Par
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(dish_img)
         parcel.writeString(dish_name)
-        parcel.writeString(price)
+        parcel.writeInt(price)
+        parcel.writeString(id)
     }
 
     override fun describeContents(): Int {

@@ -34,9 +34,6 @@ class Home : AppCompatActivity(){
         val user_name = intent.getStringExtra("name")
         val user_email = intent.getStringExtra("Email")
 
-
-
-
         drawerLayout = findViewById(R.id.drawer_layout)
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -74,11 +71,7 @@ class Home : AppCompatActivity(){
 
         navigationView.bringToFront()
 
-
     }
-
-
-
 
     fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
@@ -107,8 +100,6 @@ class Home : AppCompatActivity(){
         return true
     }
 
-
-
     override fun onBackPressed() {
         super.onBackPressed()
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
@@ -120,13 +111,4 @@ class Home : AppCompatActivity(){
 
         }
     }
-
-
-
 }
-
-
-
-
-
-
