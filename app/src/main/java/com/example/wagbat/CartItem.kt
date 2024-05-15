@@ -11,7 +11,7 @@ data class CartItem(
     val dishPrice: Int = 0,
     var quantity: Int = 0,
     var totalPrice: Int = 0,
-    var price: Int = 0, // Added price property
+    var price: Int = 0,
     @get:Exclude @set:Exclude var status: String = "", // Ignored field
     @get:Exclude @set:Exclude var date: String = "",   // Ignored field
     @get:Exclude @set:Exclude var time: String = ""    // Ignored field
@@ -23,7 +23,7 @@ data class CartItem(
         parcel.readInt(),
         parcel.readInt(),
         parcel.readInt(),
-        parcel.readInt() // Added reading price from parcel
+        parcel.readInt()
     )
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
@@ -33,7 +33,7 @@ data class CartItem(
         dest.writeInt(dishPrice)
         dest.writeInt(quantity)
         dest.writeInt(totalPrice)
-        dest.writeInt(price) // Added writing price to parcel
+        dest.writeInt(price)
     }
 
     override fun describeContents(): Int {

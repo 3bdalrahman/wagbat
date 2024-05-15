@@ -1,6 +1,7 @@
 package com.example.wagbat
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.util.findColumnIndexBySuffix
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -53,6 +55,16 @@ class MyOrders : Fragment() {
                     val myOrdersAdapter = MyOrdersAdapter(historyList)
                     cartsRecyclerView.adapter = myOrdersAdapter
 
+                    myOrdersAdapter.setOnItemClickListener(object : MyOrdersAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+                            val intent = Intent(requireContext(),historyCartDetails::class.java)
+                            intent.putExtra("historyCartId",historyList[position].cartId)
+                                .putExtra("date",historyList[position].date)
+                                .putExtra("time",historyList[position].time)
+                                .putExtra("finalTotalPrice",historyList[position].finalTotalPrice)
+                            startActivity(intent)
+                        }
+                    })
                 }
             }
 

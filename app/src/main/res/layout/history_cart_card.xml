@@ -78,6 +78,37 @@
                 </TextView>
 
             </LinearLayout>
+            <Button
+                android:enabled="false"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:drawableBottom="@drawable/ic_baseline_remove">
+
+            </Button>
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01"
+                android:layout_gravity="bottom"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <Button
+                android:enabled="false"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="#FE724C"
+                android:drawableBottom="@drawable/ic_baseline_add">
+            </Button>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
