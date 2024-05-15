@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Wagbat"
         tools:targetApi="31">
         <activity
+            android:name=".historyCartDetails"
+            android:exported="false" />
+        <activity
             android:name=".MyOrdersCard"
             android:exported="false" />
         <activity
