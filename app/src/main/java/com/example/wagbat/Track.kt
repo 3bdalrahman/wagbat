@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener
 import android.content.Context
 import android.content.Intent
 import android.provider.ContactsContract.Data
+import android.util.Log
 import android.widget.Toast
 
 class Track : AppCompatActivity() {
@@ -32,6 +33,7 @@ class Track : AppCompatActivity() {
     private lateinit var orderConfirmFoodTimeBullet: ImageView
     private lateinit var submitBtn : Button
     private lateinit var currentUserId: String
+    private var finalTotalPrice: Double = 0.0
 
     private val handler = Handler(Looper.getMainLooper())
 
@@ -56,7 +58,7 @@ class Track : AppCompatActivity() {
 
         val startTime = intent.getLongExtra("startTime", 0)
         val confirmedDeliverTime = intent.getLongExtra("deliverTime", 0)
-
+        finalTotalPrice = intent.getDoubleExtra("finalTotalPrice",0.0)
         val sdf = SimpleDateFormat("hh:mm a", Locale.getDefault())
         val formattedStartTime = sdf.format(startTime)
         val formattedDeliverTime = sdf.format(confirmedDeliverTime)
@@ -155,11 +157,10 @@ class Track : AppCompatActivity() {
     private fun saveToHistory(cartDetails: Any?){
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val currentUserRef: DatabaseReference = database.reference.child("users").child(currentUserId)
-
+        Log.d("finalTotalPrice",finalTotalPrice.toString())
         val historyKey = currentUserRef.child("history").push().key?:""
-        val currentDateAndTime = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
-        currentUserRef.child("history").child(historyKey).child("date").setValue(currentDateAndTime)
         currentUserRef.child("history").child(historyKey).child("details").setValue(cartDetails)
+        currentUserRef.child("history").child(historyKey).child("finalTotalPrice").setValue(finalTotalPrice)
         clearCartData(currentUserRef.child("cart"))
     }
     private fun clearCartData(currentUserCartRef: DatabaseReference){

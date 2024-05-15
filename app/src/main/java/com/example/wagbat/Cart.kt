@@ -32,6 +32,7 @@ class Cart : AppCompatActivity() {
     private var total: Double = 0.0
     private lateinit var totalText: TextView
     private lateinit var confirmBtn: Button
+    private  var finalTotalPrice: Double =0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +53,7 @@ class Cart : AppCompatActivity() {
         val deliveryStatus = "preparing"
         confirmBtn.setOnClickListener{
             var intent = Intent(this, Track::class.java)
-            intent.putExtra("startTime",currentTimeMillis).putExtra("deliverTime",deliveryTimeMllis)
+            intent.putExtra("startTime",currentTimeMillis).putExtra("deliverTime",deliveryTimeMllis).putExtra("finalTotalPrice",finalTotalPrice)
             updateOrderStatus(userId,deliveryStatus)
             startActivity(intent)
             finish()
@@ -63,22 +64,29 @@ class Cart : AppCompatActivity() {
         val currentTime = Calendar.getInstance()
         currentTime.timeInMillis = currentTimeMillis
         val deliveryTime = Calendar.getInstance()
-        if(currentTime.get(Calendar.HOUR_OF_DAY) < 10 && currentTime.get(Calendar.MINUTE) == 30){
+        Log.d("CurrentHour", "${currentTime.get(Calendar.HOUR_OF_DAY)}")
+        Log.d("CurrentMinute", "${currentTime.get(Calendar.MINUTE)}")
+        if(currentTime.get(Calendar.HOUR_OF_DAY) < 10 || (currentTime.get(Calendar.HOUR_OF_DAY) == 10 && currentTime.get(Calendar.MINUTE) <= 30) ){
+            Log.d("DeliveryTime", "Setting delivery time to 12:00 PM")
             deliveryTime.set(Calendar.HOUR_OF_DAY,12)//12:00 PM
             deliveryTime.set(Calendar.MINUTE,0)
-        }else if ((currentTime.get(Calendar.HOUR_OF_DAY) > 12 && currentTime.get(Calendar.MINUTE) == 0) ||
-            (currentTime.get(Calendar.HOUR_OF_DAY) < 13 && currentTime.get(Calendar.MINUTE) == 30)
-        ){
-            deliveryTime.set(Calendar.HOUR_OF_DAY,15)//12:00 PM
+            deliveryTime.set(Calendar.SECOND,0)
+            return deliveryTime.timeInMillis
+        }else if (currentTime.get(Calendar.HOUR_OF_DAY) < 12 || (currentTime.get(Calendar.HOUR_OF_DAY) == 12 && currentTime.get(Calendar.MINUTE) < 30)){
+            Log.d("DeliveryTime", "Setting delivery time to 3:00 PM")
+            deliveryTime.set(Calendar.HOUR_OF_DAY,15)//3:00 PM
             deliveryTime.set(Calendar.MINUTE,0)
+            deliveryTime.set(Calendar.SECOND,0)
+            return deliveryTime.timeInMillis
         }else{
 //            confirmBtn.isEnabled = false
-            deliveryTime.set(Calendar.HOUR_OF_DAY,21)//10:00 PM
+            Log.d("DeliveryTime", "Setting default delivery time to 9:00 PM")
+            deliveryTime.set(Calendar.HOUR_OF_DAY,21)//9:00 PM
             deliveryTime.set(Calendar.MINUTE,0)
             Toast.makeText(this@Cart,"Orders can be confirmed before 1:30 pm",Toast.LENGTH_SHORT).show()
+            deliveryTime.set(Calendar.SECOND,0)
+            return deliveryTime.timeInMillis
         }
-        deliveryTime.set(Calendar.SECOND,0)
-        return deliveryTime.timeInMillis
     }
 
     private fun getCartData(userId: String) {
@@ -103,7 +111,9 @@ class Cart : AppCompatActivity() {
                     subTotalText.text = "${subTotal}$"
                     total = subTotal + 5.25 + 1.33
                     totalText.text = "${total}$"
+                    finalTotalPrice = total
                     val cartAdapter = CartAdapter(cartList,userId,cartDishIds)
+                    Log.d("finalTotalPrice",finalTotalPrice.toString())
                     recylerView.adapter = cartAdapter
                 }
             }
