@@ -95,8 +95,8 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:text="6391 Elgin St. Celina, Delaware 10299"
+                android:layout_marginTop="16dp"
+                android:text="New Cairo Technological University, Main Gate"
                 android:textColor="@color/white">
 
             </TextView>

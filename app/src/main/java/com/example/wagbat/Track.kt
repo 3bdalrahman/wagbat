@@ -67,12 +67,14 @@ class Track : AppCompatActivity() {
         orderConfirmFoodTimeText.text = formattedDeliverTime
 
         // Calculate prepare time (30 seconds after start time)
-        val prepareTime = startTime + (30 * 1000) // 30 seconds after start time
+//        val prepareTime = startTime + (30 * 1000) // 30 seconds after start time
+        val prepareTime = startTime + (15 *60 * 1000) // 15 Minute after start time
         val formattedPrepareTime = sdf.format(prepareTime)
         prepareFoodTimeText.text = formattedPrepareTime
 
         // Calculate deliver time (1 minute after start time)
-        val deliverTimeAfterPrepare = startTime + (60 * 1000) // 1 minute after start time
+//        val deliverTimeAfterPrepare = startTime + (60 * 1000) // 1 minute after start time
+        val deliverTimeAfterPrepare = startTime + (15 * 60 * 1000) // 30 minute after start time
         val formattedDeliverTimeAfterPrepare = sdf.format(deliverTimeAfterPrepare)
         deliverFoodTimeText.text = formattedDeliverTimeAfterPrepare
 
