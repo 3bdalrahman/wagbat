@@ -56,18 +56,6 @@ WagBat is a mobile application designed to help users find the perfect places to
 
 5. Build and run the application
 
-## Project Structure 📁
-
-```
-wagbat/
-├── app/                    # Application module
-│   ├── src/               # Source code
-│   ├── build.gradle       # App level build configuration
-│   └── proguard-rules.pro # ProGuard rules
-├── gradle/                # Gradle wrapper directory
-├── build.gradle           # Project level build configuration
-└── settings.gradle        # Project settings
-```
 
 ## Contributing 🤝
 
