@@ -13,11 +13,13 @@ WagBat is a mobile application designed to help users find the perfect places to
 ## Technology Stack 🛠️
 
 ### Mobile Development
+
 - **Android Native**
 - **Java/Kotlin**
 - **Gradle Build System**
 
 ### Backend & Services
+
 - **Firebase**
   - Authentication
   - Real-time Database
@@ -25,6 +27,7 @@ WagBat is a mobile application designed to help users find the perfect places to
   - Analytics
 
 ### Design & UI/UX
+
 - **Material Design Components**
 - **Custom UI Elements**
 - **Responsive Layouts**
@@ -32,6 +35,7 @@ WagBat is a mobile application designed to help users find the perfect places to
 ## Getting Started 🚀
 
 ### Prerequisites
+
 - Android Studio Arctic Fox or later
 - JDK 11 or later
 - Android SDK API 21 or higher
@@ -40,6 +44,7 @@ WagBat is a mobile application designed to help users find the perfect places to
 ### Installation
 
 1. Clone the repository
+
    ```bash
    git clone https://github.com/yourusername/wagbat.git
    ```
@@ -49,13 +54,13 @@ WagBat is a mobile application designed to help users find the perfect places to
 3. Sync the project with Gradle files
 
 4. Configure your Firebase project:
+
    - Create a new Firebase project
    - Add your Android app to Firebase
    - Download `google-services.json` and place it in the app directory
    - Enable required Firebase services
 
 5. Build and run the application
-
 
 ## Contributing 🤝
 
@@ -79,7 +84,26 @@ This project is proprietary software. All rights reserved.
 
 ## Contact 📧
 
-Project Link: [https://github.com/yourusername/wagbat](https://github.com/yourusername/wagbat)
+Project Link: [https://github.com/3bdalrahman/wagbat](https://github.com/3bdalrahman/wagbat)
+
+## Team 👥
+
+Meet the talented developers behind WagBat:
+
+### Abdulrhman Ahmed
+
+- GitHub: [3bdalrahman](https://github.com/3bdalrahman)
+- LinkedIn: [Abdulrhman Ahmed](https://www.linkedin.com/in/abdulrhman-ahmed03/)
+
+### Sara Magdy
+
+- GitHub: [](https://github.com/)
+- LinkedIn: [](https://www.linkedin.com/in//)
+
+### Amr Matarek
+
+- GitHub: [Amr11matarek](https://github.com/Amr11matarek)
+- LinkedIn: [Amr Matarek](https://www.linkedin.com/in/amr-matarek-72839b244)
 
 ## Acknowledgments 🙏
 
@@ -89,4 +113,4 @@ Project Link: [https://github.com/yourusername/wagbat](https://github.com/yourus
 
 ---
 
-Made with ❤️ by the WagBat Team 
+Made with ❤️ by the WagBat Team
