@@ -1,4 +1,4 @@
-# WagBat 🐾
+# WagBat 🍝
 
 WagBat is a mobile application designed to help users find the perfect places to hang out based on their budget. With an extensive database of restaurants, cafes, parks, and other entertainment options, users can filter search results by location, price, and other relevant criteria, making decision-making easier and more efficient.
 
