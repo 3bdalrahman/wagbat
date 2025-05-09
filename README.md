@@ -46,7 +46,7 @@ WagBat is a mobile application designed to help users find the perfect places to
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/yourusername/wagbat.git
+   git clone https://github.com/3bdalrahman/wagbat.git
    ```
 
 2. Open the project in Android Studio
